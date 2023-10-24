@@ -9,4 +9,9 @@ public class NavigateTo {
         return Task.where("{0} opens the DuckDuckGo home page",
                 Open.browserOn().the(DuckDuckGoHomePage.class));
     }
+
+    public static Performable theSpringPetclinicHomePage() {
+        return Task.where("{0} opens the Spring Petclinic home page",
+                Open.browserOn().the(SpringPetclinicHomePage.class));
+    }
 }
