@@ -1,0 +1,10 @@
+---
+services:
+  api:
+    image: docker.io/addianto/spring-petclinic-rest:latest
+    ports:
+      - "127.0.0.1:9966:9966"
+  app:
+    image: docker.io/addianto/spring-petclinic-angular:latest
+    ports:
+      - "127.0.0.1:80:8080"
