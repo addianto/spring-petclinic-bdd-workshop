@@ -20,14 +20,16 @@ public class SpecialtyStepDefinitions {
         actor.wasAbleTo(
                 Open.browserOn()
                     .the(SpringPetclinicHomePage.class),
-                HoverOverBy.over(Link.withTitle("specialties")),
-                Click.on(Link.withTitle("specialties"))
+                // TODO: Refactor the two actions below into a new Performable class
+                HoverOverBy.over(Link.withText("Specialties")),
+                Click.on(Link.withText("Specialties"))
         );
     }
 
     @When("{actor} adds a new specialty called {string}")
     public void addsNewSpecialty(Actor actor, String name) {
         actor.attemptsTo(
+                // TODO: Refactor the Click action into a new Performable class
                 Click.on(Button.withText("Add")),
                 Enter.theValue(name)
                      .into(InputField.withNameOrId("name"))
@@ -52,7 +54,8 @@ public class SpecialtyStepDefinitions {
                 Ensure.thatAmongst(InputField.withNameOrId("spec_name"))
                       .anyMatch(name + " should be on the list",
                               (field) -> field.getValue()
-                                              .equals(name))
+                                              .equals(name)
+                      )
         );
     }
 }
