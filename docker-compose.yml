@@ -1,7 +1,7 @@
 ---
 services:
   api:
-    image: docker.io/addianto/spring-petclinic-rest:latest
+    image: docker.io/springcommunity/spring-petclinic-rest:3.0.2
     ports:
       - "127.0.0.1:9966:9966"
   app:
