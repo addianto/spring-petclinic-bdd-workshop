@@ -17,6 +17,6 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: 'maven'
-      # TODO: Add Maven wrapper into the codebase and use it to run build
       - name: Build with Maven
+        # TODO: Add Maven wrapper into the codebase and use it to run build
         run: mvn -B verify --file pom.xml
